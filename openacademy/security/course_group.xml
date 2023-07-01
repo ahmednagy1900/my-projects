@@ -1,0 +1,12 @@
+<!--?xml version="1.0" encoding="UTF-8"?>-->
+<odoo>
+    <record id="test_course_category" model="ir.model.category">
+        <field name="name">test category</field>
+    </record>
+
+    <record id="test_course_user" model="res.groups">
+        <field name="name">user</field>
+        <field name="category_id" ref="test_course_category"/>
+    </record>
+
+</odoo>

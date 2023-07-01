@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_appointment_form" model="ir.ui.view">
+        <field name="name">appointment.view.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="days_of_doctor"/>
+                        <field name="time_of_doctor_work"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="HospitalAppointment_tree_view">
+        <field name="name">Hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree string="HospitalAppointment tree">
+                <field name="days_of_doctor"/>
+                <field name="time_of_doctor_work"/>
+            </tree>
+        </field>
+    </record>
+    <record id="hospital_appointment_action" model="ir.actions.act_window">
+        <field name="name">Appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first appointment
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="appointment_menu"
+              name="Appointment"
+              action="hospital_appointment_action"
+              parent="patient_root_master"
+              sequence="0"/>
+
+
+</odoo>
